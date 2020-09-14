@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="script.js"></script>
+
+  
+</head>
+
+<body>
+  <div>
+    <div class="form__group field">
+      <h1>Simple URL-Shortner!</h1>
+      <p>{{msg}}</p>
+
+      <form id="myform" class="myform" name="myform" action="/url" method="POST">
+        <input type="text" placeholder="Alias" id="alias" name="alias" class="form__field" />
+        <input type="text" placeholder="URL" id="url" name="url" class="form__field" />
+        <button  class="button_cont"><a class="example_d" rel="nofollow noopener">Short It!</a></button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>URL</th>
+            <th>Alias</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each urls}}
+          <tr>
+
+            <td>
+              <a href={{this.url}}>{{this.url}}</a>
+            </td>
+            <td>
+              <a href={{this.alias}}>{{this.alias}}</a>
+            </td>
+
+          </tr>
+          {{else}}
+          <p></p>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>
